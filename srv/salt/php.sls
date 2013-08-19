@@ -3,6 +3,8 @@ php5-cli:
   pkg:
     - installed
 
+# Install Box .phar maker
+# @see http://box-project.org
 box_install:
   cmd.run:
     - name: curl -s http://box-project.org/installer.php | php
@@ -12,6 +14,7 @@ box_install:
       - pkg: php5-cli
       - pkg: curl
 
+# Install Boris REPL
 # @see https://github.com/d11wtq/boris
 boris_clone:
   git.latest:

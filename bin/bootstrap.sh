@@ -7,7 +7,7 @@ set -e errexit  # fail on any error
 
 # Bootstrap Salt minion
 # @see http://docs.saltstack.com/topics/tutorials/quickstart.html
-wget -O - http://bootstrap.saltstack.org | sh
+wget -O - http://bootstrap.saltstack.org | sudo sh
 
 # Clone Github project
 if [ -d "$PWD/net.constructions-incongrues.salt" ]; then
@@ -19,8 +19,8 @@ else
 fi
 
 # Create symlinks
-ln -sf $PWD/srv/salt /srv/salt
-ln -sf $PWD/srv/pillar /srv/pillar
+sudo ln -sf $PWD/srv/salt /srv/salt
+sudo ln -sf $PWD/srv/pillar /srv/pillar
 
 # Call highstate
-salt-call --local state.highstate
+sudo salt-call --local state.highstate
