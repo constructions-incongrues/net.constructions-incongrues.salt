@@ -7,7 +7,7 @@ set -e errexit  # fail on any error
 
 # Bootstrap Salt minion
 # @see http://docs.saltstack.com/topics/tutorials/quickstart.html
-wget -O - http://bootstrap.saltstack.org
+wget -O - http://bootstrap.saltstack.org | sh
 
 # Clone Github project
 git clone https://github.com/constructions-incongrues/net.constructions-incongrues.salt.git
