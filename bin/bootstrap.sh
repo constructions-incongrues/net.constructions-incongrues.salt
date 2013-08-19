@@ -15,11 +15,12 @@ if [ -d "$PWD/net.constructions-incongrues.salt" ]; then
   git pull origin master
 else
   git clone https://github.com/constructions-incongrues/net.constructions-incongrues.salt.git
+  cd net.constructions-incongrues.salt
 fi
 
 # Create symlinks
-ln -sf $PWD/net.constructions-incongrues.salt/srv/salt /srv/salt
-ln -sf $PWD/net.constructions-incongrues.salt/srv/pillar /srv/pillar
+ln -sf $PWD/srv/salt /srv/salt
+ln -sf $PWD/srv/pillar /srv/pillar
 
 # Call highstate
 salt-call --local state.highstate
