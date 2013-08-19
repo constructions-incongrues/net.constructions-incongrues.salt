@@ -10,7 +10,12 @@ set -e errexit  # fail on any error
 wget -O - http://bootstrap.saltstack.org | sh
 
 # Clone Github project
-git clone https://github.com/constructions-incongrues/net.constructions-incongrues.salt.git
+if [ -d "$PWD/net.constructions-incongrues.salt" ]; then
+  cd $PWD/net.constructions-incongrues.salt
+  git pull origin master
+else
+  git clone https://github.com/constructions-incongrues/net.constructions-incongrues.salt.git
+fi
 
 # Create symlinks
 ln -sf $PWD/net.constructions-incongrues.salt/srv/salt /srv/salt
