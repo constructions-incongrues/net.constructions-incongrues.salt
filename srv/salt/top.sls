@@ -1,6 +1,7 @@
 base:
   '*':
     - base
+    - bower
     - git
     - nodejs
     - php
