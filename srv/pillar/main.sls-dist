@@ -1,2 +1,10 @@
 user: @username@
 group: @username@
+
+git:
+  name: @git.name@
+  email: @git.email@
+
+github:
+  username: @username@
+

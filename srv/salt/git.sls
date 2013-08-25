@@ -27,15 +27,15 @@ git config --global color.sh auto:
     - require:
       - pkg: git
 
-git config --global user.email "tristan@rivoallan.net":
+git config --global user.email "{{ pillar.git.email }}":
   cmd.run:
-    - unless: git config user.email | grep -q "tristan@rivoallan.net"
+    - unless: git config user.email | grep -q "{{ pillar.git.email }}"
     - require:
       - pkg: git
 
-git config --global user.name "Tristan Rivoallan":
+git config --global user.name "{{ pillar.git.name }}":
   cmd.run:
-    - unless: git config user.name | grep -q "Tristan Rivoallan"
+    - unless: git config user.name | grep -q "{{ pillar.git.name }}"
     - require:
       - pkg: git
 
