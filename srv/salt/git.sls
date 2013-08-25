@@ -35,7 +35,7 @@ git config --global user.email "{{ pillar.git.email }}":
 
 git config --global user.name "{{ pillar.git.name }}":
   cmd.run:
-    - unless: git config user.name | grep -q "{{ pillar.git.name }}"
+    - unless: git config user.name | grep -q "^{{ pillar.git.name }}$"
     - require:
       - pkg: git
 
