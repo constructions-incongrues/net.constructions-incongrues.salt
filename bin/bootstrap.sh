@@ -22,5 +22,10 @@ fi
 sudo ln -sf $PWD/srv/salt /srv/salt
 sudo ln -sf $PWD/srv/pillar /srv/pillar
 
+# Dist files
+for f in `find . -name *-dist | xargs`; do
+	sed "s/@username@/`whoami`/" $f > "`dirname $f`/`basename $f -dist`";
+done
+
 # Call highstate
 sudo salt-call --local state.highstate
