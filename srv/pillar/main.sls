@@ -1,2 +1,0 @@
-user: trivoallan
-group: trivoallan
