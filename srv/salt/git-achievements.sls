@@ -12,7 +12,7 @@ git@github.com:{{ pillar.github.username }}/git-achievements.git:
   git.latest:
     - rev: gh-pages
     - target: /opt/git-achievements
-    - runas: trivoallan
+    - runas: {{ pillar.user }}
 
 /home/{{ pillar.user }}/.bash_aliases:
   file.managed:
