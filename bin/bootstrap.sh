@@ -9,6 +9,9 @@ set -e errexit  # fail on any error
 # @see http://docs.saltstack.com/topics/tutorials/quickstart.html
 wget -O - http://bootstrap.saltstack.org | sudo sh
 
+# Install Git
+sudo apt-get install -y --force-yes git
+
 # Clone Github project
 if [ -d "$PWD/net.constructions-incongrues.salt" ]; then
   cd $PWD/net.constructions-incongrues.salt

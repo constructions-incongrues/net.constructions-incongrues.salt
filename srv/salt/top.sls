@@ -2,6 +2,7 @@ base:
   '*':
     - base
     - bower
+    - compass
     - git
     - git-achievements
     - githug
